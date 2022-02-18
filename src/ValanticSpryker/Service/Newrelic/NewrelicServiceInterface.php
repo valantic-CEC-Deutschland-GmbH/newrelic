@@ -1,6 +1,6 @@
 <?php declare(strict_types = 1);
 
-namespace Pyz\Service\Newrelic;
+namespace ValanticSpryker\Service\Newrelic;
 
 use Generated\Shared\Transfer\CustomerTransfer;
 
@@ -61,15 +61,4 @@ interface NewrelicServiceInterface
      * @return void
      */
     public function addCustomTracer(string $className): void;
-
-    /**
-     * Format Sap Array
-     *
-     * @api
-     *
-     * @param array $attributes
-     *
-     * @return array
-     */
-    public function formatSapArray(array $attributes): array;
 }

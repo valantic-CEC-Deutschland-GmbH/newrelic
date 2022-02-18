@@ -1,8 +1,7 @@
 <?php
 
-namespace Pyz\Service\Newrelic\Collector;
+namespace ValanticSpryker\Service\Newrelic\Collector;
 
-use Generated\Shared\Transfer\CompanyRoleCollectionTransfer;
 use Generated\Shared\Transfer\CustomerTransfer;
 
 class CustomerPropertiesCollector implements CustomerPropertiesCollectorInterface
@@ -15,30 +14,11 @@ class CustomerPropertiesCollector implements CustomerPropertiesCollectorInterfac
     public function getCustomerProperties(CustomerTransfer $customer): array
     {
         $attributes = [
-            'username' => $customer->getEmail(),
-            'customernumber' => $customer->getCustomerNumber(),
+            'customer.email' => $customer->getEmail(),
+            'customer.id' => $customer->getIdCustomer(),
+            'customer.is_guest' => $customer->getIsGuest(),
         ];
 
-        $companyUser = $customer->getCompanyUserTransfer();
-        if ($companyUser !== null) {
-            $attributes['companyid'] = $companyUser->getCompany()->getIdCompany();
-            $attributes['roles'] = $this->getCustomerRoles($companyUser->getCompanyRoleCollection());
-        }
-
         return $attributes;
-    }
-
-    /**
-     * @param \Generated\Shared\Transfer\CompanyRoleCollectionTransfer|null $companyRoleCollectionTransfer
-     *
-     * @return string
-     */
-    private function getCustomerRoles(?CompanyRoleCollectionTransfer $companyRoleCollectionTransfer): string
-    {
-        $roles = '';
-        foreach ($companyRoleCollectionTransfer->getRoles() as $companyRole) {
-            $roles = $roles . ', ' . $companyRole->getName();
-        }
-        return $roles;
     }
 }

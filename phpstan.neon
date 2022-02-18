@@ -1,0 +1,17 @@
+includes:
+    - vendor/spryker-sdk/phpstan-spryker/extension.neon
+
+parameters:
+    bootstrapFiles:
+        - tests/bootstrap.php
+
+    excludePaths:
+        - src/Generated
+
+    scanDirectories:
+        - src/Generated/Shared/Transfer
+
+    reportUnmatchedIgnoredErrors: false
+
+    parallel:
+       maximumNumberOfProcesses: 1

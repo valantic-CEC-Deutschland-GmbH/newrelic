@@ -1,6 +1,6 @@
 <?php
 
-namespace Pyz\Service\Newrelic\Collector;
+namespace ValanticSpryker\Service\Newrelic\Collector;
 
 use Generated\Shared\Transfer\CustomerTransfer;
 

@@ -1,9 +1,5 @@
 <?php
 
-/**
- * This file is part of the Spryker Suite.
- * For full license information, please view the LICENSE file that was distributed with this source code.
- */
 
 namespace ValanticSpryker\Service\Newrelic;
 
@@ -11,7 +7,7 @@ use Generated\Shared\Transfer\CustomerTransfer;
 use Spryker\Service\Kernel\AbstractService;
 
 /**
- * @method \Pyz\Service\Newrelic\NewrelicServiceFactory getFactory()
+ * @method \ValanticSpryker\Service\Newrelic\NewrelicServiceFactory getFactory()
  */
 class NewrelicService extends AbstractService implements NewrelicServiceInterface
 {
@@ -84,19 +80,5 @@ class NewrelicService extends AbstractService implements NewrelicServiceInterfac
     public function addCustomTracer(string $className): void
     {
         $this->getFactory()->createNewrelicHandler()->addCustomTracer($className);
-    }
-
-    /**
-     * Format Sap Array
-     *
-     * @api
-     *
-     * @param array $attributes
-     *
-     * @return array
-     */
-    public function formatSapArray(array $attributes): array
-    {
-        return $this->getFactory()->createSapArrayFormatter()->format($attributes);
     }
 }

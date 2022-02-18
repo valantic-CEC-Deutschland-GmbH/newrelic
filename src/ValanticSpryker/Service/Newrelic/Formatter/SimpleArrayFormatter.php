@@ -1,6 +1,6 @@
 <?php declare(strict_types = 1);
 
-namespace Pyz\Service\Newrelic\Formatter;
+namespace ValanticSpryker\Service\Newrelic\Formatter;
 
 class SimpleArrayFormatter implements ArrayFormatterInterface
 {
@@ -33,7 +33,7 @@ class SimpleArrayFormatter implements ArrayFormatterInterface
 
         unset($array[$key]);
 
-        if (empty($array)) {
+        if (!$array) {
             return $newArray;
         }
 

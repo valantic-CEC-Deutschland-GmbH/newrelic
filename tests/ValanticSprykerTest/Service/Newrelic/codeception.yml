@@ -1,0 +1,18 @@
+namespace: ValanticSprykerTest\Service\Newrelic
+
+paths:
+    tests: .
+    data: _data
+    support: _support
+    log: _output
+
+coverage:
+    enabled: true
+    remote: false
+
+suites:
+    Business:
+        path: .
+        modules:
+            enabled:
+                - Asserts

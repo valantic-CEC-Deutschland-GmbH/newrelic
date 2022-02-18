@@ -1,6 +1,6 @@
 <?php
 
-namespace Pyz\Service\Newrelic\Formatter;
+namespace ValanticSpryker\Service\Newrelic\Formatter;
 
 interface ArrayFormatterInterface
 {

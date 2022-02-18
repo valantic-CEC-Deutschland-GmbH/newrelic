@@ -2,28 +2,28 @@
 
 declare(strict_types = 1);
 
-namespace Pyz\Service\Newrelic\Handler;
+namespace ValanticSpryker\Service\Newrelic\Handler;
 
 use Exception;
 use Generated\Shared\Transfer\CustomerTransfer;
-use Pyz\Service\Newrelic\Collector\CustomerPropertiesCollectorInterface;
-use Pyz\Service\Newrelic\Formatter\ArrayFormatterInterface;
+use ValanticSpryker\Service\Newrelic\Collector\CustomerPropertiesCollectorInterface;
+use ValanticSpryker\Service\Newrelic\Formatter\ArrayFormatterInterface;
 
 class NewrelicHandler
 {
     /**
-     * @var \Pyz\Service\Newrelic\Formatter\ArrayFormatterInterface
+     * @var \ValanticSpryker\Service\Newrelic\Formatter\ArrayFormatterInterface
      */
     private $arrayFormatter;
 
     /**
-     * @var \Pyz\Service\Newrelic\Collector\CustomerPropertiesCollectorInterface
+     * @var \ValanticSpryker\Service\Newrelic\Collector\CustomerPropertiesCollectorInterface
      */
     private $customerPropertiesCollector;
 
     /**
-     * @param \Pyz\Service\Newrelic\Formatter\ArrayFormatterInterface $arrayFormatter
-     * @param \Pyz\Service\Newrelic\Collector\CustomerPropertiesCollectorInterface $customerPropertiesCollector
+     * @param \ValanticSpryker\Service\Newrelic\Formatter\ArrayFormatterInterface $arrayFormatter
+     * @param \ValanticSpryker\Service\Newrelic\Collector\CustomerPropertiesCollectorInterface $customerPropertiesCollector
      */
     public function __construct(ArrayFormatterInterface $arrayFormatter, CustomerPropertiesCollectorInterface $customerPropertiesCollector)
     {

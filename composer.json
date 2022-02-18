@@ -40,14 +40,16 @@
         "spryker/code-sniffer": "^0.17.4",
         "spryker-sdk/phpstan-spryker": "^0.4.0",
         "spryker/console": "^4.10",
-        "codeception/module-phpbrowser": "^1.0.0"
+        "codeception/module-phpbrowser": "^1.0.0",
+        "spryker/kernel": "^3.65",
+        "spryker/testify": "^3.43"
     },
     "scripts": {
         "test": "vendor/bin/codecept run",
         "coverage": "XDEBUG_MODE=coverage vendor/bin/codecept run --coverage --coverage-cobertura --coverage-html --coverage-html --no-colors",
-        "cs-check": "vendor/bin/phpcs --standard=vendor/spryker/code-sniffer/Spryker/ruleset.xml --ignore=Shared/DataProvider/* -v ./src/ ./tests/unit/",
-        "cs-fix": "vendor/bin/phpcbf --standard=vendor/spryker/code-sniffer/Spryker/ruleset.xml --ignore=Shared/DataProvider/* -v ./src/ ./tests/unit/",
-        "phpstan": "vendor/bin/phpstan analyze -c phpstan.neon src/ tests/unit/ -l 5",
+        "cs-check": "vendor/bin/phpcs --standard=vendor/spryker/code-sniffer/Spryker/ruleset.xml --ignore=Shared/Transfer/* -v ./src/ ./tests/ValanticSprykerTest/",
+        "cs-fix": "vendor/bin/phpcbf --standard=vendor/spryker/code-sniffer/Spryker/ruleset.xml --ignore=Shared/Transfer/* -v ./src/ ./tests/ValanticSprykerTest/",
+        "phpstan": "vendor/bin/phpstan analyze -c phpstan.neon src/ tests/ValanticSprykerTest/ -l 5",
         "dpg": "vendor/bin/xervice dataprovider:generate -vvv",
         "dpc": "vendor/bin/xervice dataprovider:clean -vvv"
     },
