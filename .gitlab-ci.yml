@@ -1,0 +1,7 @@
+---
+image: registry.gitlab.nxs360.com/docker/php:7.4-cli
+
+include:
+  - project: 'packages/gitlab-templates'
+    file: '/composer/composer-deploy.yml'
+    ref: 1.0.0
