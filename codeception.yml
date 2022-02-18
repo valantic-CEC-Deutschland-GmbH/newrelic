@@ -18,5 +18,5 @@ settings:
   log: true
 coverage:
   enabled: true
-  whitelist: { include: ['src/*'] }
+  whitelist: { include: ['src/ValanticSpryker/*'] }
 bootstrap: bootstrap.php

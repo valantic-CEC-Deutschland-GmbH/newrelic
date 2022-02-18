@@ -9,6 +9,9 @@ paths:
 coverage:
     enabled: true
     remote: false
+    include:
+        - '../../../../src/ValanticSpryker/*'
+
 
 suites:
     Business:
