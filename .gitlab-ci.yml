@@ -1,6 +1,13 @@
 ---
 image: registry.gitlab.nxs360.com/docker/php:7.4-cli
 
+cache: &global_cache
+  paths:
+    - vendor/
+    - src/Generated/
+  policy: pull
+
+
 include:
   - project: 'packages/gitlab-templates'
     file: '/composer/composer-deploy.yml'
