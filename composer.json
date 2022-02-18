@@ -1,0 +1,59 @@
+{
+    "name": "valantic-spryker/newrelic",
+    "description": "NewRelic service for enhaced data collection",
+    "type": "library",
+    "license": "GPL-3.0-only",
+    "authors": [
+        {
+            "name": "Christian Lutz",
+            "email": "christian.lutz@cec.valantic.com"
+        },
+        {
+            "name": "Phillip Schleicher",
+            "email": "phillip.schleicher@cec.valantic.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "ValanticSpryker\\": "src/ValanticSpryker/",
+            "ValanticSprykerSupport\\": "support/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ValanticSprykerTest\\": "tests/unit/"
+        },
+        "files": [
+            "env.php"
+        ]
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": ">=7.4",
+        "spryker/customer": "^7.40"
+    },
+    "require-dev": {
+        "codeception/codeception": "^4.1",
+        "codeception/module-asserts": "^1.3",
+        "roave/security-advisories": "dev-master",
+        "spryker/code-sniffer": "^0.17.4",
+        "spryker-sdk/phpstan-spryker": "^0.4.0",
+        "spryker/console": "^4.10",
+        "codeception/module-phpbrowser": "^1.0.0"
+    },
+    "scripts": {
+        "test": "vendor/bin/codecept run",
+        "coverage": "XDEBUG_MODE=coverage vendor/bin/codecept run --coverage --coverage-cobertura --coverage-html --coverage-html --no-colors",
+        "cs-check": "vendor/bin/phpcs --standard=vendor/spryker/code-sniffer/Spryker/ruleset.xml --ignore=Shared/DataProvider/* -v ./src/ ./tests/unit/",
+        "cs-fix": "vendor/bin/phpcbf --standard=vendor/spryker/code-sniffer/Spryker/ruleset.xml --ignore=Shared/DataProvider/* -v ./src/ ./tests/unit/",
+        "phpstan": "vendor/bin/phpstan analyze -c phpstan.neon src/ tests/unit/ -l 5",
+        "dpg": "vendor/bin/xervice dataprovider:generate -vvv",
+        "dpc": "vendor/bin/xervice dataprovider:clean -vvv"
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    }
+}
