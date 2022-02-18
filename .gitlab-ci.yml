@@ -5,11 +5,3 @@ include:
   - project: 'packages/gitlab-templates'
     file: '/composer/composer-deploy.yml'
     ref: 1.0.0
-
-
-build:composer:
-  extends: ".build:compose"
-  script:
-    - composer install
-    - vendor/bin/console transfer:generate
-  stage: build

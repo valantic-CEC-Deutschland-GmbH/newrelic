@@ -45,13 +45,16 @@
         "spryker/testify": "^3.43"
     },
     "scripts": {
+        "post-install-cmd": [
+            "@putenv APPLICATION_ENV=dev",
+            "@putenv APPLICATION_STORE=DE",
+            "vendor/bin/console transfer:generate"
+        ],
         "test": "vendor/bin/codecept run",
         "coverage": "XDEBUG_MODE=coverage vendor/bin/codecept run --coverage --coverage-cobertura --coverage-html --coverage-html --no-colors",
         "cs-check": "vendor/bin/phpcs --standard=vendor/spryker/code-sniffer/Spryker/ruleset.xml --ignore=Shared/Transfer/* -v ./src/ ./tests/ValanticSprykerTest/",
         "cs-fix": "vendor/bin/phpcbf --standard=vendor/spryker/code-sniffer/Spryker/ruleset.xml --ignore=Shared/Transfer/* -v ./src/ ./tests/ValanticSprykerTest/",
         "phpstan": "vendor/bin/phpstan analyze -c phpstan.neon src/ tests/ValanticSprykerTest/ -l 5",
-        "dpg": "vendor/bin/xervice dataprovider:generate -vvv",
-        "dpc": "vendor/bin/xervice dataprovider:clean -vvv"
     },
     "config": {
         "allow-plugins": {
