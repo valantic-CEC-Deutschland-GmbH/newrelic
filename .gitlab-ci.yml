@@ -6,15 +6,14 @@ include:
     file: '/composer/composer-deploy.yml'
     ref: 1.0.0
 
-cache:
-  paths:
-    - vendor/
-    - src/Generated/
-  policy: pull
-
 build:composer:
   extends: ".build:compose"
   script:
     - composer install
     - APPLICATION_ENV=ci APPLICATION_STORE=DE vendor/bin/console transfer:generate
   stage: build
+  cache:
+    paths:
+      - vendor/
+      - src/Generated/
+    policy: push
