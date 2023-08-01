@@ -1,8 +1,8 @@
 {
-    "name": "valantic-spryker/newrelic",
+    "name": "valantic-cec/newrelic",
     "description": "NewRelic service for enhanced data collection",
     "type": "library",
-    "license": "GPL-3.0-only",
+    "license": "proprietary",
     "authors": [
         {
             "name": "Christian Lutz",
