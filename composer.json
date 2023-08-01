@@ -1,5 +1,5 @@
 {
-    "name": "valantic-cec/newrelic",
+    "name": "valantic-spryker-eco/newrelic",
     "description": "NewRelic service for enhanced data collection",
     "type": "library",
     "license": "proprietary",
